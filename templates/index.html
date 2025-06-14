@@ -1,0 +1,20 @@
+<!doctype html>
+<head>
+    <meta lang="en" charset="UTF-8">
+    <Title> Home page</Title>
+    <link href="static/css/style.css" rel="stylesheet">
+</head>
+<body style="background-image: url('static/images/sunset.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+    <div class="container">
+        <h1 class="fw-bold text-center" style="font-size: 48px;" >Searching Steam Data</h1>
+        <form action="{{ url_for('search') }}" method="post" class="search_bar">
+            <input type="text" placeholder="Enter user id" name="q">
+            <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+            </button>
+        </form>
+    </div>
+
+</body>

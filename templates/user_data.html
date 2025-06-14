@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends List</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body style="background: linear-gradient(to bottom, #222, #444)">
+    <header>
+        <form action="{{ url_for('search') }}" method="post">
+            <input type="text" id="searchBar" placeholder="Search friend's id..." name="q">
+        </form>
+    </header>
+    <div class="friends-container">
+        {% for i in range(no_player) %}
+        <div class="friend-card">
+            <div class="background-image">
+                <img src="{{ friends[i]['avatarfull'] }}" alt="Background Image">
+            </div>
+            <div class="avatar">
+                <img src="{{ friends[i]['avatar'] }}" alt="Avatar">
+            </div>
+            <div class="friend-info">
+                <h2>{{ friends[i]['personaname'] }}</h2>
+                <p><strong>Real Name:</strong> {{ friends[i]['realname'] }}</p>
+                <p><strong>Steam ID:</strong> {{ friends[i]['steamid'] }}</p>
+                <p><strong>Relationship:</strong> {{ friends[i]['relationship'] }}</p>
+                <p><strong>Friend Since:</strong> {{ friends[i]['friend_since'] }}</p>
+                <p><a href="{{ friends[i]['profileurl'] }}" target="_blank">Profile URL</a></p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <footer>
+        <p>&copy; 2025 Friends List | <a href="{{ url_for('home') }}">Back to Home</a></p>
+    </footer>
+</body>
+</html>
